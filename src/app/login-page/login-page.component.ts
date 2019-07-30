@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
     ).subscribe(
       res => {
         if (res.id_token) {
-          this.auth.setSession(res.id_token);
+          this.auth.setSession(res.id_token, this.email);
           this.router.navigateByUrl('/dashboard');
         }
       });

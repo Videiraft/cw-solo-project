@@ -1,3 +1,5 @@
 .linksList {
   display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
 }

@@ -21,9 +21,10 @@ export class AuthService {
     );
   }
 
-  public setSession (authToken):void {
+  public setSession (authToken: string, email: string):void {
     console.log('setting Session');
     localStorage.setItem('id_token', authToken);
+    localStorage.setItem('email', email);
   }
   
   public isAuthenticated(): boolean {

@@ -1,5 +1,13 @@
-<div><img src="/assets/pin-it.png" /></div>
-<a (click)="logOut()" href="">Log Out</a>
+<div class="header">
+  <div class="log-out-container">
+    <p>Hello {{ user }}!</p>
+    <a (click)="logOut()" href="" class="log-out">Log Out</a>
+  </div>
+  <div class="logo-container">
+    <img src="/assets/pin-it.png" class="logo"/>
+  </div>
+</div>
+
 <h2>Articles</h2>
 <app-links-list [links]="articles" [type]="'articles'"></app-links-list>
 <h2>Videos</h2>

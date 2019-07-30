@@ -1,10 +1,14 @@
 .article-container {
   border: 1px solid #727687;
+  border-radius: 2px;
   display: flex;
   justify-content: center;
   width: 270px;
   padding: 5px 10px;
   height: 160px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  background-color: white;
 }
 
 .favicon-container {
