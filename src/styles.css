@@ -67,10 +67,10 @@ a:hover {
 }
 
 .item-container {
-  border: 1px solid #727687;
+  border: 0px solid;
   border-radius: 2px;
   width: 270px;
   height: 160px;
   margin-right: 10px;
-  box-shadow: 1px 1px 4px 1px #ccc;
+  /*box-shadow: 0px 0px 4px 1px #ccc;*/
 }
