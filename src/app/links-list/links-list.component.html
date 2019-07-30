@@ -1,0 +1,11 @@
+<div class="linksList">
+  <div *ngFor="let link of links" class='links-container'>
+    <app-video-item *ngIf="type === 'videos'; else image" [link]="link"></app-video-item>
+    <ng-template #image>
+      <app-image-item *ngIf="type === 'images'; else article" [link]="link"></app-image-item>
+    </ng-template>
+    <ng-template #article>
+      <app-article-item [link]="link"></app-article-item>
+    </ng-template>
+  </div>
+</div>

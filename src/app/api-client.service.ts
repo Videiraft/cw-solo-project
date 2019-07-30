@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
+import { AuthService } from './auth/auth.service';
 import { Link } from './link';
 
 @Injectable({
@@ -8,12 +10,15 @@ import { Link } from './link';
 })
 export class ApiClientService {
 
-  baseURL: string =  'http://127.0.0.1:4000';
-
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, private auth: AuthService) { }
 
   getAllLinks (): Observable<Link[]> {
-    return this.http.get<Link[]>(`${this.baseURL}/users/links`);
+    const bearer = 'Bearer ' + this.auth.getToken();
+    const headers = new HttpHeaders({'Authorization': bearer });
+    return this.http.get<Link[]>(
+      `${environment.baseURL}/users/links`,
+      { headers }
+    );
   }
 
 }

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule }     from './app-routing.module';
+import { LinksListComponent } from './links-list/links-list.component';
+import { ArticleItemComponent } from './article-item/article-item.component';
+import { VideoItemComponent } from './video-item/video-item.component';
+import { ImageItemComponent } from './image-item/image-item.component';
 
 @NgModule({
   imports: [
@@ -19,6 +23,10 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     LoginPageComponent,
     DashboardComponent,
+    LinksListComponent,
+    ArticleItemComponent,
+    VideoItemComponent,
+    ImageItemComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

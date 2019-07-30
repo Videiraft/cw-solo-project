@@ -5,4 +5,5 @@ export class Link {
   tags: string[];
   favicon: string;
   sent: boolean;
+  typeLink: string;
 }

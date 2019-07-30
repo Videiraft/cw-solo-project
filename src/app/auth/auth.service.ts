@@ -16,7 +16,7 @@ export class AuthService {
     const authBase64: string = 'Basic ' + btoa(email + ':' + password);
     const headers = new HttpHeaders({'Authorization': authBase64 });
     return this.http.get<{id_token:string}>(
-      environment.baseURL + '/users/login', 
+      `${environment.baseURL}/users/login`, 
       { headers },
     );
   }
@@ -27,10 +27,18 @@ export class AuthService {
   }
   
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('id_token');
+    const token = this.getToken();
     return token ? true : false;
     // TODO: expiration
     // return tokenNotExpired(token);
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('id_token');
+  }
+
+  public deleteToken() {
+    localStorage.removeItem('id_token');
   }
 
 }

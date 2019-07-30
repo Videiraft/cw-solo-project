@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<div><img src="/assets/pin-it.png" /></div>
+<a (click)="logOut()" href="">Log Out</a>
+<h2>Articles</h2>
+<app-links-list [links]="articles" [type]="'articles'"></app-links-list>
+<h2>Videos</h2>
+<app-links-list [links]="videos" [type]="'videos'"></app-links-list>
+<h2>Images</h2>
+<app-links-list [links]="images" [type]="'images'"></app-links-list>

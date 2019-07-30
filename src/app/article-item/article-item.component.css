@@ -1,0 +1,29 @@
+.article-container {
+  border: 1px solid #727687;
+  display: flex;
+  justify-content: center;
+  width: 270px;
+  padding: 5px 10px;
+  height: 160px;
+}
+
+.favicon-container {
+  margin-right: 10px;
+  align-self: center;
+}
+
+.favicon-container img {
+  width: 35px;
+}
+
+.info-container {
+  height: 100%;
+  align-self: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-url {
+  text-align: justify;
+  font-size: 16px;
+}
