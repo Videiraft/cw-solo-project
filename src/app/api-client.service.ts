@@ -21,4 +21,13 @@ export class ApiClientService {
     );
   }
 
+  getAllTags (): Observable<string[]> {
+    const bearer = 'Bearer ' + this.auth.getToken();
+    const headers = new HttpHeaders({'Authorization': bearer });
+    return this.http.get<string[]>(
+      `${environment.baseURL}/users/links/tags`,
+      { headers }
+    );
+  }
+
 }

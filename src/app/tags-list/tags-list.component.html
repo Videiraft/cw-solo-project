@@ -1,0 +1,7 @@
+<div class="tagsList">
+  <div class="info-text"><p>Click tags to filter:</p></div>
+  <div class="tag" (click)="handleClickTag($event)">ALL</div>
+  <div *ngFor="let tag of tags" class='tag-container'>
+    <div class="tag" (click)="handleClickTag($event)">{{ tag }}</div>
+  </div>
+</div>

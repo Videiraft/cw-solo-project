@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ApiClientService } from '../api-client.service';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 import { Link } from '../link';
 
@@ -8,7 +7,7 @@ import { Link } from '../link';
   templateUrl: './links-list.component.html',
   styleUrls: ['./links-list.component.css']
 })
-export class LinksListComponent implements OnInit {
+export class LinksListComponent implements OnInit, OnChanges {
 
   @Input()
   links: Link[];
@@ -16,9 +15,35 @@ export class LinksListComponent implements OnInit {
   @Input()
   type: string;
 
-  constructor(private apiClientService: ApiClientService) { }
+  @Input()
+  tags: string[] = [];
 
-  ngOnInit() {
+  // tag: string;
+  filteredLinks: Link[];
+
+  constructor() { }
+
+  ngOnInit () {
+    this.filterLinks(this.tags)
   }
 
+  ngOnChanges () {
+    this.filterLinks(this.tags)
+  }
+
+  filterLinks (tags: string[]) {
+    if (tags.length < 1) {
+      this.resetLinks();
+    } else if (this.links) {
+      this.filteredLinks = this.links.filter((link) => {
+        for (let i = 0; i < this.tags.length; i++) {
+          return link.tags.includes(this.tags[i]);
+        }
+      });
+    }
+  }
+
+  resetLinks () {
+    this.filteredLinks = this.links;
+  }
 }

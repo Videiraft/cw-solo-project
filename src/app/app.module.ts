@@ -11,6 +11,7 @@ import { LinksListComponent } from './links-list/links-list.component';
 import { ArticleItemComponent } from './article-item/article-item.component';
 import { VideoItemComponent } from './video-item/video-item.component';
 import { ImageItemComponent } from './image-item/image-item.component';
+import { TagsListComponent } from './tags-list/tags-list.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { ImageItemComponent } from './image-item/image-item.component';
     ArticleItemComponent,
     VideoItemComponent,
     ImageItemComponent,
+    TagsListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

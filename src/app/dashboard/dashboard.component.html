@@ -8,9 +8,7 @@
   </div>
 </div>
 
-<h2>Articles</h2>
-<app-links-list [links]="articles" [type]="'articles'"></app-links-list>
-<h2>Videos</h2>
-<app-links-list [links]="videos" [type]="'videos'"></app-links-list>
-<h2>Images</h2>
-<app-links-list [links]="images" [type]="'images'"></app-links-list>
+<app-tags-list (addTag)="onAddTag($event)"></app-tags-list>
+<app-links-list [links]="articles" [type]="'articles'" [tags]="tags"></app-links-list>
+<app-links-list [links]="videos" [type]="'videos'" [tags]="tags"></app-links-list>
+<app-links-list [links]="images" [type]="'images'" [tags]="tags"></app-links-list>

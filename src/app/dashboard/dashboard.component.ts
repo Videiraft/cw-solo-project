@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   videos: Link[] = [];
   articles: Link[] = [];
   images: Link[] = [];
+  tags: string[] = [];
 
   constructor(private auth: AuthService, private apiClientService: ApiClientService) { }
 
@@ -27,6 +28,16 @@ export class DashboardComponent implements OnInit {
           this[link.typeLink + 's'].push(link);
         });
       });
+  }
+
+  onAddTag (tag) {
+    if (tag === 'ALL') {
+      this.tags = [];
+    } else {
+      const newArr = [...this.tags];
+      newArr.push(tag);
+      this.tags = newArr;
+    }
   }
 
   logOut () {
