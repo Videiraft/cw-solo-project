@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
-import { ApiClientService } from '../api-client.service';
+import { AuthService } from '../../auth/auth.service';
+import { ApiClientService } from '../../services/api-client.service';
 
-import { Link } from '../link';
+import { Link } from '../../link';
 
 @Component({
   selector: 'app-dashboard',

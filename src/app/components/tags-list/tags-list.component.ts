@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
-import { ApiClientService } from '../api-client.service';
+import { ApiClientService } from '../../services/api-client.service';
 
 @Component({
   selector: 'app-tags-list',

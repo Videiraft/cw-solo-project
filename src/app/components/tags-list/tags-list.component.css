@@ -1,6 +1,6 @@
 .tagsList {
   display: flex;
-  font-size: 12px;
+  font-size: 11px;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -16,9 +16,9 @@
 
 .tag {
   cursor: pointer;
-  font-size: 11px;
   text-align: center;
   padding: 4px;
   background-color: white;
   border: 1px grey solid;
+  margin-bottom: 5px;
 }
