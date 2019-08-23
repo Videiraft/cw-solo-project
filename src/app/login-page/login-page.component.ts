@@ -22,8 +22,8 @@ export class LoginPageComponent implements OnInit {
       this.password
     ).subscribe(
       res => {
-        if (res.id_token) {
-          this.auth.setSession(res.id_token, this.email);
+        if (res.data.id_token) {
+          this.auth.setSession(res.data.id_token, this.email);
           this.router.navigateByUrl('/dashboard');
         }
       });

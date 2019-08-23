@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from "@angular/common/http";
+import { Observable } from "rxjs";
 
 import { environment } from '../../environments/environment';
-import { Observable } from "rxjs";
+import { LoginResponse } from '../interfaces-api';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login (email: string, password: string): Observable<{id_token:string}> {
-    console.log('Trying to Login');
+  login (email: string, password: string): Observable<LoginResponse> {
     const authBase64: string = 'Basic ' + btoa(email + ':' + password);
     const headers = new HttpHeaders({'Authorization': authBase64 });
-    return this.http.get<{id_token:string}>(
+    return this.http.get<LoginResponse>(
       `${environment.baseURL}/users/login`, 
       { headers },
     );
   }
 
   public setSession (authToken: string, email: string):void {
-    console.log('setting Session');
     localStorage.setItem('id_token', authToken);
     localStorage.setItem('email', email);
   }
@@ -30,8 +29,6 @@ export class AuthService {
   public isAuthenticated(): boolean {
     const token = this.getToken();
     return token ? true : false;
-    // TODO: expiration
-    // return tokenNotExpired(token);
   }
 
   public getToken(): string {

@@ -23,8 +23,8 @@ export class DashboardComponent implements OnInit {
     const email: string = localStorage.getItem('email');
     this.user = email.charAt(0).toUpperCase() + email.slice(1, email.indexOf('@'));
     this.apiClientService.getAllLinks()
-      .subscribe(links => {
-        links.forEach((link) => {
+      .subscribe(res => {
+        res.data.links.forEach((link) => {
           this[link.typeLink + 's'].push(link);
         });
       });

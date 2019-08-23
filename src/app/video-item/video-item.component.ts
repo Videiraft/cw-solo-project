@@ -17,7 +17,6 @@ export class VideoItemComponent implements OnInit {
 
   ngOnInit() {
     const link: string = this.link.url.replace('watch?v=', 'embed/');
-    console.log(link);
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(link);
   }
 

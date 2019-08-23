@@ -18,8 +18,8 @@ export class TagsListComponent implements OnInit {
 
   ngOnInit() {
     this.apiClientService.getAllTags()
-      .subscribe((tags: string[]) => {
-        this.tags = tags;
+      .subscribe((res) => {
+        this.tags = res.data.tags;
       });
   }
 
