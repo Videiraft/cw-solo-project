@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from '../auth/auth.service';
-import { LinksResponse, TagsResponse } from '../interfaces-api'
+import { LinksResponse, TagsResponse } from '../models/interfaces-api'
 
 @Injectable({
   providedIn: 'root'

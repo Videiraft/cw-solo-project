@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Link } from '../../link';
+import { Link } from '../../models/link';
 
 @Component({
   selector: 'app-article-item',

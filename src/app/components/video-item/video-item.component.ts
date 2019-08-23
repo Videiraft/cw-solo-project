@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Link } from '../../link';
+import { Link } from '../../models/link';
 
 @Component({
   selector: 'app-video-item',

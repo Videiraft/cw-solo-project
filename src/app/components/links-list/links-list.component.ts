@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
-import { Link } from '../../link';
+import { Link } from '../../models/link';
 
 @Component({
   selector: 'app-links-list',
