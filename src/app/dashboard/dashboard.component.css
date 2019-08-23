@@ -1,11 +1,11 @@
 .header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
 }
 
 .logo-container {
-  align-self: center;
+  grid-column: 2 / 3;
+  justify-self: center;
   margin-top: 0;
   margin-bottom: 40px;
 }
@@ -15,7 +15,7 @@
 }
 
 .log-out-container {
-  align-self: flex-end;
+  grid-column: 3 / 4;
   font-weight: 400;
 }
 

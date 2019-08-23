@@ -19,7 +19,7 @@ export class TagsListComponent implements OnInit {
   ngOnInit() {
     this.apiClientService.getAllTags()
       .subscribe((res) => {
-        this.tags = res.data.tags;
+        this.tags = res.data.tags.sort();
       });
   }
 

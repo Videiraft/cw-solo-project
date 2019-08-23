@@ -1,18 +1,24 @@
 .tagsList {
   display: flex;
   font-size: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tagsList > * {
+  min-width: 110px;
+  width: 8.3%;
 }
 
 .info-text {
-  text-align: center;
-  margin-right: 10px;
+  text-align: left;
 }
 
 .tag {
   cursor: pointer;
   font-size: 11px;
-  padding: 5px;
-  margin-right: 10px;
+  text-align: center;
+  padding: 4px;
   background-color: white;
   border: 1px grey solid;
 }
