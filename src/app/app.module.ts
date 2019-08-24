@@ -12,6 +12,7 @@ import { ArticleItemComponent } from './components/article-item/article-item.com
 import { VideoItemComponent } from './components/video-item/video-item.component';
 import { ImageItemComponent } from './components/image-item/image-item.component';
 import { TagsListComponent } from './components/tags-list/tags-list.component';
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { TagsListComponent } from './components/tags-list/tags-list.component';
     VideoItemComponent,
     ImageItemComponent,
     TagsListComponent,
+    SignupPageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

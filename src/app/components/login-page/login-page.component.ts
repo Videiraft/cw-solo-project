@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 
@@ -14,11 +14,8 @@ export class LoginPageComponent {
   constructor (private auth: AuthService, private router: Router) { }
 
   handleLogin () {
-    this.auth.login(
-      this.email,
-      this.password
-    ).subscribe(
-      res => {
+    this.auth.login(this.email, this.password)
+      .subscribe(res => {
         if (res.data.id_token) {
           this.auth.setSession(res.data.id_token, this.email);
           this.router.navigateByUrl('/dashboard');
