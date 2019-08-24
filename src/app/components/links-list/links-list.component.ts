@@ -1,5 +1,4 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-
 import { Link } from '../../models/link';
 
 @Component({
@@ -18,7 +17,7 @@ export class LinksListComponent implements OnInit, OnChanges {
   @Input()
   tags: string[] = [];
 
-  filteredLinks: Link[];
+  filteredLinks: Link[] = this.links;
 
   ngOnInit () {
     this.filterLinks(this.tags)
@@ -41,5 +40,10 @@ export class LinksListComponent implements OnInit, OnChanges {
 
   resetLinks () {
     this.filteredLinks = this.links;
+  }
+
+  onDeleteLink (linkId) {
+    this.links = this.links.filter(link => link._id !== linkId);
+    this.filterLinks(this.tags);
   }
 }

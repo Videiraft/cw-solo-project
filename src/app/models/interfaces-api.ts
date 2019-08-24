@@ -21,3 +21,7 @@ export interface LoginResponse extends ApiResponse {
     id_token: string
   }
 }
+
+export interface DeleteLinkResponse extends ApiResponse {
+  data: null
+}

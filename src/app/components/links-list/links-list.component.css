@@ -4,3 +4,7 @@
   overflow-x: scroll;
   margin-bottom: 50px;
 }
+
+.delete-button {
+  cursor: pointer;
+}

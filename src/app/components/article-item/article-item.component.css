@@ -1,15 +1,10 @@
 .article-container {
-  /*border: 1px solid #727687;
-  border-radius: 2px;*/
   display: flex;
   justify-content: center;
   width: 270px;
-  /*padding: 5px 15px;*/
   padding-right: 30px;
   height: 160px;
   margin-right: 10px;
-  /*box-shadow: 0px 0px 14px 1px #ccc;*/
-  /*background-color: white;*/
 }
 
 .favicon-container {
@@ -44,4 +39,8 @@
 
 .description p {
   overflow: hidden;
+}
+
+.delete-button {
+  cursor: pointer;
 }

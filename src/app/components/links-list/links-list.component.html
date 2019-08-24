@@ -1,18 +1,25 @@
 <h2 *ngIf="type === 'videos' && filteredLinks.length > 0; else imageH2">Videos</h2>
+
 <ng-template #imageH2>
     <h2 *ngIf="type === 'images' && filteredLinks.length > 0; else articlesH2">Images</h2>
 </ng-template>
+
 <ng-template #articlesH2>
   <h2 *ngIf="filteredLinks.length > 0" >Articles</h2>
 </ng-template>
+
 <div class="linksList">
   <div *ngFor="let link of filteredLinks" class='links-container'>
+
     <app-video-item *ngIf="type === 'videos'; else image" [link]="link"></app-video-item>
+
     <ng-template #image>
       <app-image-item *ngIf="type === 'images'; else article" [link]="link"></app-image-item>
     </ng-template>
+
     <ng-template #article>
-      <app-article-item [link]="link"></app-article-item>
+      <app-article-item [link]="link" (deleteLink)="onDeleteLink($event)"></app-article-item>
     </ng-template>
+
   </div>
 </div>
