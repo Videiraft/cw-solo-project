@@ -22,3 +22,8 @@
   border: 1px grey solid;
   margin-bottom: 5px;
 }
+
+.selected {
+  color: #DB6379;
+  font-weight: bold;
+}

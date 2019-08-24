@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { ApiClientService } from '../../services/api-client.service';
 
@@ -12,7 +12,10 @@ export class TagsListComponent implements OnInit {
   @Output()
   public addTag: EventEmitter<String> = new EventEmitter<String>();
 
-  tags: string[];
+  tags: string[] = [];
+
+  @Input()
+  selectedTags: string[] = [];
 
   constructor(private apiClientService: ApiClientService) { }
 
