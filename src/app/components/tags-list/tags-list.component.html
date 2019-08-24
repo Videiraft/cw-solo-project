@@ -1,5 +1,20 @@
 <div class="tagsList">
-  <div class="info-text"><p>Filter by tags:</p></div>
-  <div [className]="selectedTags.length < 1 ? 'selected tag' : 'tag'" (click)="handleClickTag($event)">ALL</div>
-  <div [className]="selectedTags.includes(tag) ? 'selected tag' : 'tag'" *ngFor="let tag of tags" (click)="handleClickTag($event)">{{ tag }}</div>
+  <div class="info-text">
+    <p>Filter by tags:</p>
+  </div>
+
+  <div 
+    [className]="selectedTags.length < 1 ? 'selected tag' : 'tag'"
+    (click)="handleClickTag($event)"
+  >
+    ALL
+  </div>
+
+  <div
+    [className]="selectedTags.includes(tag) ? 'selected tag' : 'tag'"
+    *ngFor="let tag of tags"
+    (click)="handleClickTag($event)"
+  >
+    {{ tag }}
+  </div>
 </div>

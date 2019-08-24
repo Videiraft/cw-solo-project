@@ -34,7 +34,8 @@ export class DashboardComponent implements OnInit {
     if (tag === 'ALL') {
       this.tags = [];
     } else {
-      this.tags = [...this.tags, tag];
+      if (this.tags.includes(tag)) this.tags = [...this.tags].filter(iTag => iTag !== tag);
+      else this.tags = [...this.tags, tag];
     }
   }
 
