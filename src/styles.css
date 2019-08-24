@@ -46,11 +46,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #DB6379;
+  color: #1057a8;
 }
 
 a:visited {
-  color: #DB6379;
+  color: #1057a8;
 }
 
 a:hover {
@@ -72,5 +72,4 @@ a:hover {
   width: 270px;
   height: 160px;
   margin-right: 10px;
-  /*box-shadow: 0px 0px 4px 1px #ccc;*/
 }

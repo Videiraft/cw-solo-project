@@ -1,0 +1,11 @@
+.hover-container:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button {
+  opacity: 0;
+  transition: opacity .25s;
+  cursor: pointer;
+  color: #DB6379;
+  font-size: 25px;
+}

@@ -1,12 +1,12 @@
 <div class="article-container">
-  <div class="delete-button" (click)="handleDeleteLink(link._id)"><span>𝗫</span></div>
+  <div class="delete-button" (click)="handleDeleteLink(link._id)"><span>𝘅</span></div>
   <div class="favicon-container">
     <img src="{{ link.favicon }}" />
   </div>
   <div class="info-container">
     <div>
       <p class="link-url">
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
       </p>
     </div>
     <div class="description">

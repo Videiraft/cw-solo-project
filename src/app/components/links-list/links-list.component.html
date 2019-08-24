@@ -11,10 +11,20 @@
 <div class="linksList">
   <div *ngFor="let link of filteredLinks" class='links-container'>
 
-    <app-video-item *ngIf="type === 'videos'; else image" [link]="link"></app-video-item>
+    <app-video-item
+      *ngIf="type === 'videos'; else image"
+      [link]="link"
+      (deleteLink)="onDeleteLink($event)"
+    >
+    </app-video-item>
 
     <ng-template #image>
-      <app-image-item *ngIf="type === 'images'; else article" [link]="link"></app-image-item>
+      <app-image-item
+        *ngIf="type === 'images'; else article"
+        [link]="link"
+        (deleteLink)="onDeleteLink($event)"
+      >
+      </app-image-item>
     </ng-template>
 
     <ng-template #article>

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ApiClientService } from '../../services/api-client.service';
 import { Link } from '../../models/link';
 
 @Component({
@@ -11,9 +12,19 @@ export class ImageItemComponent implements OnInit {
   @Input()
   link: Link;
 
-  constructor() { }
+  @Output()
+  public deleteLink: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(private apiClientService: ApiClientService) { }
 
   ngOnInit() {
+  }
+
+  handleDeleteLink () {
+    this.apiClientService.deleteLink(this.link._id)
+      .subscribe(res => {
+        if (!res.data) this.deleteLink.emit(this.link._id);
+      });
   }
 
 }

@@ -3,5 +3,16 @@ img {
   height: 160px;
   margin-right: 10px;
   border: 0px solid;
-  /*box-shadow: 1px 1px 4px 1px #ccc;*/
+}
+
+.hover-container:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button {
+  opacity: 0;
+  transition: opacity .25s;
+  cursor: pointer;
+  color: #DB6379;
+  font-size: 25px;
 }
