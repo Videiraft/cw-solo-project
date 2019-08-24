@@ -10,7 +10,6 @@ import { Link } from '../../models/link';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   user: string = '';
   videos: Link[] = [];
   articles: Link[] = [];
@@ -42,5 +41,4 @@ export class DashboardComponent implements OnInit {
   logOut () {
     this.auth.deleteToken();
   }
-
 }

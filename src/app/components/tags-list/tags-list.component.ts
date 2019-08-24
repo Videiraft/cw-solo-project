@@ -7,9 +7,8 @@ import { ApiClientService } from '../../services/api-client.service';
   styleUrls: ['./tags-list.component.css']
 })
 export class TagsListComponent implements OnInit {
-
   @Output()
-  public addTag: EventEmitter<String> = new EventEmitter<String>();
+  public addTag: EventEmitter<string> = new EventEmitter<string>();
 
   tags: string[] = [];
 
@@ -25,8 +24,7 @@ export class TagsListComponent implements OnInit {
       });
   }
 
-  handleClickTag (event) {
-    this.addTag.emit(event.target.innerText);
+  handleClickTag (innerText: string) {
+    this.addTag.emit(innerText);
   }
-
 }

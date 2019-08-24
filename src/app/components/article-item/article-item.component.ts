@@ -7,8 +7,7 @@ import { Link } from '../../models/link';
   templateUrl: './article-item.component.html',
   styleUrls: ['./article-item.component.css']
 })
-export class ArticleItemComponent implements OnInit {
-  
+export class ArticleItemComponent {
   @Input()
   link: Link;
 
@@ -16,9 +15,6 @@ export class ArticleItemComponent implements OnInit {
   public deleteLink: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private apiClientService: ApiClientService) { }
-
-  ngOnInit() {
-  }
 
   handleDeleteLink () {
     this.apiClientService.deleteLink(this.link._id)

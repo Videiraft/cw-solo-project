@@ -7,7 +7,6 @@ import { Link } from '../../models/link';
   styleUrls: ['./links-list.component.css']
 })
 export class LinksListComponent implements OnInit, OnChanges {
-
   @Input()
   links: Link[];
 
@@ -45,5 +44,9 @@ export class LinksListComponent implements OnInit, OnChanges {
   onDeleteLink (linkId) {
     this.links = this.links.filter(link => link._id !== linkId);
     this.filterLinks(this.tags);
+  }
+
+  trackByFn (_, item) {
+    return item._id;
   }
 }

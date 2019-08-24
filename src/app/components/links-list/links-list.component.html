@@ -1,7 +1,7 @@
 <h2 *ngIf="type === 'videos' && filteredLinks.length > 0; else imageH2">Videos</h2>
 
 <ng-template #imageH2>
-    <h2 *ngIf="type === 'images' && filteredLinks.length > 0; else articlesH2">Images</h2>
+  <h2 *ngIf="type === 'images' && filteredLinks.length > 0; else articlesH2">Images</h2>
 </ng-template>
 
 <ng-template #articlesH2>
@@ -9,7 +9,7 @@
 </ng-template>
 
 <div class="linksList">
-  <div *ngFor="let link of filteredLinks" class='links-container'>
+  <div *ngFor="let link of filteredLinks;trackBy: trackByFn" class='links-container'>
 
     <app-video-item
       *ngIf="type === 'videos'; else image"

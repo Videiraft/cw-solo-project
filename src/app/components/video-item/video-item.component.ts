@@ -9,7 +9,6 @@ import { Link } from '../../models/link';
   styleUrls: ['./video-item.component.css']
 })
 export class VideoItemComponent implements OnInit {
-
   @Input()
   link: Link;
   url: any;
@@ -30,5 +29,4 @@ export class VideoItemComponent implements OnInit {
         if (!res.data) this.deleteLink.emit(this.link._id);
       });
   }
-
 }
