@@ -34,9 +34,7 @@ export class DashboardComponent implements OnInit {
     if (tag === 'ALL') {
       this.tags = [];
     } else {
-      const newArr = [...this.tags];
-      newArr.push(tag);
-      this.tags = newArr;
+      this.tags = [...this.tags, tag];
     }
   }
 

@@ -18,10 +18,7 @@ export class LinksListComponent implements OnInit, OnChanges {
   @Input()
   tags: string[] = [];
 
-  // tag: string;
   filteredLinks: Link[];
-
-  constructor() { }
 
   ngOnInit () {
     this.filterLinks(this.tags)
@@ -32,12 +29,11 @@ export class LinksListComponent implements OnInit, OnChanges {
   }
 
   filterLinks (tags: string[]) {
-    if (tags.length < 1) {
-      this.resetLinks();
-    } else if (this.links) {
+    if (tags.length < 1) this.resetLinks();
+    else if (this.links) {
       this.filteredLinks = this.links.filter((link) => {
         for (let i = 0; i < this.tags.length; i++) {
-          return link.tags.includes(this.tags[i]);
+          if (link.tags.includes(this.tags[i])) return true;
         }
       });
     }
