@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -15,14 +16,13 @@ export class SignupPageComponent {
 
   handleSignup () {
     this.auth.signup(this.email, this.password)
-      .subscribe((res) => {
-        if (res.status === 'success') {
-          this.auth.login(this.email, this.password)
-            .subscribe((loginRes) => {
-              this.auth.setSession(loginRes.data.id_token, this.email);
-              this.router.navigateByUrl('/dashboard');
-            });
-        }
-      });
+      .pipe(
+        switchMap((res) => {
+          if (res.status === 'success') return this.auth.login(this.email, this.password);
+        })
+      ).subscribe((loginRes) => {
+        this.auth.setSession(loginRes.data.id_token, this.email);
+        this.router.navigateByUrl('/dashboard');
+      })
   }
 }
