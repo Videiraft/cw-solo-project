@@ -1,13 +1,19 @@
 <div class="container">
+  <div>
+    <img class="logo" src="../../../assets/pin-it.png"/>
+  </div>
   <div class="title-container">
     <h1>Signup</h1>
   </div>
-  <div>
-    <form id="signup-form">
-      <input type="text" name="email" placeholder="Email" [(ngModel)]="email"/><br>
+  <div class="signup-form-container">
+    <form class="signup-form">
+      <input type="text" name="email" placeholder="Email" [(ngModel)]="email" autocomplete="off"/><br>
       <input type="password" name="password" placeholder="Password" [(ngModel)]="password"/><br>
       <input type="submit" (click)="handleSignup()" value="Signup">
     </form>
+  </div>
+  <div>
+    <p>Already have an account? <strong><a href="/login">Login here!</a></strong></p>
   </div>
   <div>
     <p id="message-feedback"></p>
