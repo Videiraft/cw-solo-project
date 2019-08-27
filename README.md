@@ -1,27 +1,45 @@
-# CwSoloProject
+# Pin-it
+Pin-it is a bookmark manager (browser / chrome extension) that will send you by email one bookmark a day as a digestible way to consume them!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Screenshots
 
-## Code scaffolding
+<img src='./src/assets/mockup.png' alt='screens'>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+   
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installation
+To run the app please follow these instructions:
 
-## Running unit tests
+1. Clone the repository
+```bash
+git clone https://github.com/Videiraft/pin-it
+cd pin-it
+```
+2. Install the dependencies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+```
+## Get it started
+In the root project folder *pin-it*:
+```bash
+npm start
+```
+## Tech Stack
+* Angular
+* Typescript
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose ODM
 
-## Running end-to-end tests
+## Recommendation
+Have a look at the server of this application: [Pin-it Server](https://github.com/Videiraft/pin-it-server)
+Have a look at the chrome extension: [Chrome Extension](https://github.com/Videiraft/pin-it-chrome-ext)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Developer
+* Fábio Videira [LinkedIn](https://www.linkedin.com/in/fabio-videira/) | [GitHub](https://github.com/Videiraft)
